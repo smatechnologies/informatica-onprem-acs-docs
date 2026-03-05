@@ -1,5 +1,4 @@
 ---
-slug: '/'
 sidebar_label: 'Informatica Operation'
 ---
 
@@ -10,8 +9,12 @@ All definitions can only be performed using Solution Manager.
 
 ## Defining Informatica Batch Users
 
-The Informatica implementation requires an Informatica batch user to provide the user / password for connection to the Informatica database.
-Before creating the the Informatica connection or tasks, ensure that an appropriate Batch User is created.  
+The Informatica implementation requires an Informatica batch user to provide the user / password for connection to the Informatica database. It should be noted that the database user must have the required privileges to access the following tables:
+
+folder names   : opb_subject     (select SUBJ_NAME from opd_subject)
+workflow names : REP_WORKFLOWS   (select WORKFLOW_NAME from REP_WORKFLOWS where SUBJECT_AREA = 'folder name')
+
+Before creating the the Informatica connection or tasks, ensure that an appropriate Batch User is created that will be used to access the repository (Oracle connection).  
 
 ![Defining a Batch User](../static/img/ws-batch-user.png)
 
@@ -42,7 +45,6 @@ Items defined in red are required values.
     - If the software is installed within a SmaRelay environment
       - Select **General Settings**
       - In the **NetCom Name** field enter the name of the SmaRelay environment.
-    - Select **Administrative Machine Information**
     - Select **Informatica Settings**
     - In the **Directory** field enter the full path of the directory where the Informatica client binaries are installed.
     - In the **Domain** field enter the domain name of the associated Informatica installation.
@@ -53,7 +55,10 @@ Items defined in red are required values.
       select a Batch User from the drop-down list. 
     - In the **Retain Log Files** field enter the number of days to retain Informatica ACS log files (default 30 days).  
 6.  Save the definition changes. 
-7.  Start the connection by selecting the **Change Communication Status** button and selecting **Enable Full Comm.**. 
+7.  Now select **Communication Settings**
+    Ensure that the **Requires XML Escape Sequences: User-Defined** field is set to **True**. 
+    If not change the field and save the definition changes.
+8.  Start the connection by selecting the **Change Communication Status** button and selecting **Enable Full Comm.**. 
 
 ## Defining tasks
 
