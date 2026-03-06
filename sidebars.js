@@ -1,7 +1,7 @@
 module.exports = {
   mySidebar: [
     'index',
-    'informaticaOperation',
+    'InformaticaOperation',
 	'installation',
 	'release-notes',
   ],
