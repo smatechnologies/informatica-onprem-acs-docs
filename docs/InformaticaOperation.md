@@ -16,7 +16,7 @@ workflow names : REP_WORKFLOWS   (select WORKFLOW_NAME from REP_WORKFLOWS where 
 
 Before creating the the Informatica connection or tasks, ensure that an appropriate Batch User is created that will be used to access the repository (Oracle connection).  
 
-![Defining a Batch User](../static/img/ws-batch-user.png)
+![Defining a Batch User](../static/img/informatica-batch-user.png)
 
 1.  Open Solution Manager.
 2.  From the Home page select **Library**
