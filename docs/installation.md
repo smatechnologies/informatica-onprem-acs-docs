@@ -2,6 +2,14 @@
 slug: '/'
 sidebar_label: 'Installation'
 ---
+# Requirements
+The ACS Informatica software requires that the Informatica client software be installed on the same system.
+
+- OpCon Cloud or OpCon DataCenter version 25.0.3 or greater.
+- Fully configured Informatica Client software.
+- Oracle User that has access rights to the Informatica Repository.
+- Informatica User that has privileges to execute the defined tasks.
+
 # Informatica Installation
 
 Download the ACS Informatica software from the SMA FTP Site.
