@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.10.0",
-    "@docusaurus/core": "3.10.0",
-    "@docusaurus/plugin-google-gtag": "3.10.0",
-    "@docusaurus/preset-classic": "3.10.0",
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/plugin-google-gtag": "3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^1.1.1",
     "react": "^18.0.0",
