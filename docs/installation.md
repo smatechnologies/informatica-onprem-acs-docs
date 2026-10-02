@@ -26,6 +26,7 @@ The ACS Informatica software requires that the Informatica client software be in
 
 - OpCon Cloud or OpCon DataCenter version 25.0.3 or greater.
 - Fully configured Informatica Client software.
+- Oracle client software on the same server, for the connector's connection to the Informatica repository database.
 - Oracle User that has access rights to the Informatica Repository.
 - Informatica User that has privileges to run the defined jobs.
 
