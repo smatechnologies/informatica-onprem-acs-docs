@@ -15,6 +15,14 @@ There are no files to create, job subtypes to add, or Java software to install. 
 
 ## Winter 25
 
+#### 25.0.0 update
+
+2026 March
+
+**Informatica user moved to the task (CON-43).** The **Informatica User** and **Informatica User Password** are now entered on each task instead of on the connection.
+
+**Repository database connection (CON-43).** The connection adds a required **Database** field, and its batch user is now the **Repository User**, the Oracle account used to read the repository. Folder and workflow lists are read from the repository database, which requires Oracle client software on the same server.
+
 #### 25.0.0
 
 2025 January

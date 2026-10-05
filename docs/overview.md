@@ -32,10 +32,11 @@ The connector is loaded into OpCon at startup as part of the ACS framework. All 
 
 ### Deployment
 
-The connector can be installed alongside an OpCon system or within a SmaRelay installation. It communicates with Informatica using two command-line utilities:
+The connector can be installed alongside an OpCon system or within a SmaRelay installation. It communicates with Informatica using the Pmcmd command-line utility:
 
-- **Pmcmd** — submits and monitors workflow execution
-- **Pmrep** — queries repository metadata such as folder and workflow names
+- **Pmcmd** — submits and monitors workflow runs
+
+Folder and workflow names are read directly from the Informatica repository database, using the Oracle client.
 
 ### Availability check
 
@@ -43,12 +44,12 @@ Before accepting workflow requests, the connector uses the Pmcmd **pingservice**
 
 ### Folder and workflow discovery
 
-The connector retrieves folder and workflow information from the Informatica database:
+The connector retrieves folder and workflow information from the Informatica repository database:
 
-- Folder names are retrieved periodically using SQL statements and cached in a **folders.txt** file.
-- When a folder is selected during task definition, available workflows are retrieved from the database and displayed in the workflow list.
+- Folder names are read from the `opb_subject` table at each agent status check and cached in a **folders.txt** file.
+- When a folder is selected during task definition, its workflows are read from the `REP_WORKFLOWS` table and displayed in the workflow list.
 
-### Workflow execution and monitoring
+### Workflow runs and monitoring
 
 | Action | Command | Description |
 |--------|---------|-------------|
@@ -77,9 +78,7 @@ For on-premises deployments, the connector is installed in the `\SAM\plugins` fo
 
 **ACS (Agentless Connector System)** — The OpCon framework for building integrations that do not require a standalone agent installation. Integrations are packaged as DLLs loaded by the SMANetCom module.
 
-**Pmcmd** — The Informatica command-line utility used to start, stop, and monitor workflow execution.
-
-**Pmrep** — The Informatica command-line utility used to query repository metadata, such as folder and workflow names.
+**Pmcmd** — The Informatica command-line utility used to start, stop, and monitor workflow runs.
 
 **SmaRelay** — The relay service used in cloud deployments to bridge on-premises resources with OpCon Cloud.
 
